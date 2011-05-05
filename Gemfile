@@ -6,8 +6,6 @@ gem "mail"
 
 # Authentication + Authorization
 gem "devise"
-gem "devise_invitable"
-gem "cancan"
 
 # Deployment
 gem "capistrano"
