@@ -1,31 +1,67 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.5'
+# Rails
+gem "rails", "~>3.0"
+gem "mail"
 
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
+# Authentication + Authorization
+gem "devise"
+gem "devise_invitable"
+gem "cancan"
 
-gem 'sqlite3'
+# Deployment
+gem "capistrano"
+gem "capistrano-ext"
 
-# Use unicorn as the web server
-# gem 'unicorn'
+# Views
+gem "haml"
+gem "sass"
+gem "formtastic"
+gem "hpricot"
+gem "responders"
 
-# Deploy with Capistrano
-# gem 'capistrano'
+# JS Stuff
+gem "sprockets"
+gem "sprocketizer"
+gem "jquery-rails"
+gem "therubyracer"
+gem "barista"
+gem "json"
 
-# To use debugger (ruby-debug for Ruby 1.8.7+, ruby-debug19 for Ruby 1.9.2+)
-# gem 'ruby-debug'
-# gem 'ruby-debug19', :require => 'ruby-debug'
+# Database
+gem "pg"
 
-# Bundle the extra gems:
-# gem 'bj'
-# gem 'nokogiri'
-# gem 'sqlite3-ruby', :require => 'sqlite3'
-# gem 'aws-s3', :require => 'aws/s3'
+# AREL extensions
+gem "squeel"
+gem "meta_search"
 
-# Bundle gems for the local environment. Make sure to
-# put test-only gems in this group so their generators
-# and rake tasks are available in development mode:
-# group :development, :test do
-#   gem 'webrat'
-# end
+# For dev and test environments
+group :development, :test do
+  gem "ruby-debug"
+  gem "awesome_print"
+    
+  gem "factory_girl_rails"
+  gem "factory_girl_generator"
+  gem "ffaker"
+  
+  gem "timecop"
+  
+  gem "metrical"
+end
+
+# For test only
+group :test do
+  gem "rspec"
+  gem "rspec-rails"
+  gem "rspec_tag_matchers"
+  gem "remarkable_activerecord", ">=4.0.0.alpha4"
+  gem "rr"
+
+  gem "autotest"  
+end
+
+# These gems will only work on Mac
+group :test_mac do
+  gem "autotest-fsevent"
+  gem "autotest-growl"
+end
